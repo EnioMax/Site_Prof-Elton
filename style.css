@@ -1,0 +1,688 @@
+/* style.css - Identidade Visual Acadêmica & Alta Conversão - ÊNIO MAX.TECH */
+
+:root {
+    --bg-base: #faf8f5;         /* Tom Off-White para leitura confortável */
+    --cor-primaria: #3d2b1f;    /* Marrom escuro institucional */
+    --cor-secundaria: #8c6239;  /* Bronze/Dourado queimado para CTAs */
+    --cor-texto: #2c2520;       /* Grafite escuro para contraste */
+    --borda: #e8e2dc;           /* Cinza suave para delimitações */
+    --sucesso: #2e7d32;         /* Verde para botões de sucesso */
+    --fonte-serif: 'Times New Roman', Times, serif; 
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-serif);
+    background-color: var(--bg-base);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* 1. TOPO & MENU */
+.topo-site {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--borda);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.container-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.marca {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    font-size: 1.6rem; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    color: var(--cor-primaria);
+    letter-spacing: 1.5px; 
+}
+
+.menu a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.menu a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* 2. HERO SECTION (BANNER DO TOPO) */
+.hero {
+    padding: 0; 
+    width: 100%;
+    height: 420px; 
+    background: url('assets/imagens/hero-imagem.webp') no-repeat center center;
+    background-size: cover; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    position: relative;
+    filter: brightness(1.05) contrast(0.9);
+}
+
+.hero-conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 40px;
+    display: flex;
+    justify-content: flex-end; 
+    box-sizing: border-box;
+}
+
+.hero .btn-principal {
+    background-color: var(--cor-secundaria);
+    color: #ffffff;
+    padding: 14px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.hero .btn-principal:hover {
+    background-color: var(--cor-primaria);
+    transform: translateY(-2px);
+}
+
+/* DIAGRAMAÇÃO DA SEÇÃO PERFIL (FOTO + TEXTO) */
+.secao-biografia {
+    padding: 60px 20px;
+    background-color: #ffffff;
+}
+
+.container-biografia {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.foto-perfil {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+}
+
+.foto-perfil img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.placeholder-foto {
+    width: 100%;
+    height: 350px;
+    background: #e8e2dc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    color: var(--cor-primaria);
+    font-weight: bold;
+}
+
+.texto-biografia {
+    flex: 2;
+}
+
+.texto-biografia h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+}
+
+.texto-biografia p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--cor-texto);
+}
+
+/* 3. ACERVO / GRID DE ARTIGOS */
+.container-acervo {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.titulo-secao {
+    font-size: 2rem;
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.grid-artigos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.card-artigo {
+    background: #ffffff;
+    border: 1px solid var(--borda);
+    padding: 25px;
+    border-radius: 4px;
+    transition: transform 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-artigo:hover {
+    transform: translateY(-4px);
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.categoria-tag {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* 4. SIMULADOR MULTIETAPAS & CAMPOS */
+.secao-simulador {
+    background-color: #ffffff;
+    border-top: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
+    padding: 80px 20px;
+}
+
+.card-simulador {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--bg-base);
+    border: 1px solid var(--borda);
+    padding: 40px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.pergunta {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--cor-primaria);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.opcoes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.btn-opcao {
+    background-color: #ffffff;
+    border: 1px solid var(--borda);
+    padding: 15px;
+    font-family: var(--fonte-serif);
+    font-size: 1.1rem;
+    color: var(--cor-texto);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-opcao:hover {
+    border-color: var(--cor-secundaria);
+    background-color: #fdfcfb;
+    color: var(--cor-secundaria);
+}
+
+.campo-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--borda);
+    border-radius: 4px;
+    font-family: var(--fonte-serif);
+    font-size: 1rem;
+}
+
+.btn-concluir {
+    width: 100%;
+    background-color: var(--sucesso);
+    color: #ffffff;
+    padding: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--fonte-serif);
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.btn-concluir:hover {
+    opacity: 0.9;
+}
+
+/* 5. PLANTÃO DE IMPRENSA COMPACTO (WHATSAPP CORRIGIDO) */
+.plantao-imprensa {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366; 
+    color: #ffffff;
+    padding: 8px 16px; 
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    z-index: 10000; 
+    
+    /* TRAVAS ANTI-GIGANTE */
+    width: auto !important;
+    max-width: 260px !important;
+    height: 45px !important; 
+    box-sizing: border-box;
+}
+
+.plantao-imprensa:hover {
+    transform: scale(1.03);
+    background-color: #1ebd59;
+}
+
+.ponto-vivo {
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff; 
+    border-radius: 50%;
+    margin-right: 8px;
+    flex-shrink: 0;
+    display: inline-block;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    animation: pulsar 1.6s infinite;
+}
+
+@keyframes pulsar {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(255, 255, 255, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+.texto-plantao {
+    font-size: 0.85rem; 
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    white-space: nowrap; 
+}
+
+/* 6. MODAL SYSTEM */
+.modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(3px); 
+    z-index: 2000;
+}
+
+.modal-conteudo {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 40px;
+    width: 90%;
+    max-width: 480px;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+
+.fechar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.2s;
+}
+
+.fechar:hover {
+    color: var(--cor-primaria);
+}
+
+.modal h3 {
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+}
+
+.modal p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* 7. SEÇÃO DE CONTATO DIRETO & REDES SOCIAIS PREMIUM */
+.secao-contato {
+    background-color: var(--bg-base);
+    padding: 80px 20px;
+    border-top: 1px solid var(--borda);
+}
+
+.container-contato-flex {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.info-contato-direto {
+    flex: 1;
+    min-width: 300px;
+}
+
+.formulario-simulador-coluna {
+    flex: 1;
+    width: 100%;
+    min-width: 320px;
+}
+
+.titulo-secao-esquerda {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+}
+
+.subtitulo-contato {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 35px;
+    line-height: 1.5;
+}
+
+.bloco-canal {
+    margin-bottom: 25px;
+    border-left: 3px solid var(--cor-secundaria);
+    padding-left: 15px;
+}
+
+.bloco-canal strong {
+    color: var(--cor-primaria);
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.bloco-canal a {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.bloco-canal a:hover {
+    text-decoration: underline;
+}
+
+/* CONFIGURAÇÃO EXCLUSIVA DOS ÍCONES SOCIAIS EXPANDIDOS */
+.redes-sociais-contato {
+    margin-top: 40px;
+}
+
+.redes-sociais-contato strong {
+    color: var(--cor-primaria);
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.icones-redes-grid {
+    display: flex;
+    gap: 30px; /* Espaço amplo e elegante entre os ícones */
+    margin-top: 20px;
+    flex-wrap: wrap; 
+}
+
+.rede-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;  /* Tamanho premium do círculo */
+    height: 60px; /* Tamanho premium do círculo */
+    border-radius: 50%;
+    color: #ffffff !important;
+    font-size: 1.8rem; /* Ícones grandes e imponentes */
+    text-decoration: none;
+    transition: transform 0.2s, filter 0.2s;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.rede-link:hover {
+    transform: translateY(-4px);
+    filter: brightness(0.9);
+}
+
+/* Cores de Destaque das Redes */
+.rede-link.whatsapp { background-color: #25d366; }
+.rede-link.linkedin { background-color: #0077b5; }
+.rede-link.instagram { background-color: #e1306c; }
+.rede-link.facebook { background-color: #1877f2; }
+
+.titulo-simulador-caixa {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+/* 8. RODAPÉ */
+.rodape {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.rodape p {
+    margin-bottom: 8px;
+}
+
+/* 4.1 SEÇÃO MÍDIA & ENTREVISTAS */
+.secao-midia-focada {
+    padding: 60px 20px;
+    background-color: var(--bg-base);
+    border-top: 1px solid var(--borda);
+}
+
+.container-midia-central {
+    max-width: 900px; /* mais estreito que o padrão 1200px pra focar no vídeo */
+    margin: 0 auto;
+}
+
+.bloco-video-focado {
+    background: #ffffff;
+    border-radius: 6px;
+    overflow: hidden; /* garante que o iframe respeite os cantos arredondados */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    margin-bottom: 30px; /* espaço entre os cards da lista dinâmica de mídia */
+}
+
+.bloco-video-focado:last-child {
+    margin-bottom: 0; /* remove o espaço extra depois do último card */
+}
+
+/* Truque de proporção 16:9 responsiva */
+.box-video-yt-novo {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 9/16 = 0.5625 → mantém a proporção do vídeo */
+}
+
+.box-video-yt-novo iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.box-video-yt-novo img.midia-foto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* mesmo enquadramento responsivo do iframe, aplicado a fotos */
+}
+
+.info-video-texto-novo {
+    padding: 30px;
+}
+
+.tag-canal-nova {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.titulo-video-novo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--cor-primaria);
+    margin-bottom: 12px;
+}
+
+.resumo-video-novo {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--cor-texto);
+}
+
+/* 4.2 SEÇÃO GALERIA */
+.secao-galeria {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    border-top: 1px solid var(--borda);
+}
+
+.container-secao {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.item-galeria {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.item-galeria img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.item-galeria:hover img {
+    transform: scale(1.08);
+}
+
+.item-galeria figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 12px 12px;
+    background: linear-gradient(to top, rgba(61,43,31,0.9), rgba(61,43,31,0));
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.3;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.item-galeria:hover figcaption {
+    transform: translateY(0);
+}
+
+/* 9. RESPONSIVIDADE TOTAL (CELULARES E MONITORES MENORES) */
+@media (max-width: 868px) {
+    .container-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .menu a {
+        margin: 0 10px;
+    }
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    .container-contato-flex {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .info-contato-direto {
+        text-align: center;
+    }
+    .bloco-canal {
+        border-left: none;
+        padding-left: 0;
+    }
+    .icones-redes-grid {
+        justify-content: center;
+    }
+    .container-biografia {
+        flex-direction: column;
+        text-align: center;
+    }
+    .foto-perfil {
+        max-width: 100%;
+    }
+}

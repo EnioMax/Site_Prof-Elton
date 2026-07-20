@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prof. Dr. Elton Gomes | Análise Política e Geopolítica</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontes clássicas e elegantes -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Biblioteca de Ícones FontAwesome para as Redes Sociais -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Botão Flutuante de Urgência (Plantão de Imprensa) -->
+    <div class="plantao-imprensa" id="plantaoBtn" onclick="toggleModal('modalUrgente')">
+        <span class="ponto-vivo"></span>
+        <span class="texto-plantao">Plantão de Imprensa (Urgente)</span>
+    </div>
+
+    <!-- 1. CABEÇALHO & MENU DE NAVEGAÇÃO -->
+    <header class="topo-site">
+        <div class="container-header">
+            <div class="marca">Prof. Dr. Elton Gomes</div>
+            <nav class="menu">
+                <a href="#perfil">Perfil</a>
+                <a href="#midia">Mídia & Entrevistas</a>
+                <a href="#publicacoes">Artigos & Publicações</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION (Banner de Capa) -->
+    <section id="sobre" class="hero">
+        <div class="hero-conteudo">
+            <a href="#contato" class="btn-principal">Agendar Palestra ou Entrevista</a>
+        </div>
+    </section>
+
+    <!-- 3. SEÇÃO PERFIL (Biografia) -->
+    <section id="perfil" class="secao-biografia">
+        <div class="container-biografia">
+            <div class="foto-perfil">
+                <img src="assets/imagens/elton-perfil.jpg" alt="Prof. Dr. Elton Gomes" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="placeholder-foto">[Foto de Perfil]</div> 
+            </div>
+            <div class="texto-biografia">
+                <h2>Quem é o Prof. Dr. Elton Gomes?</h2>
+                <p>Doutor in Ciência Política, analista de conjuntura nacional e relações internacionais. Com mais de duas décadas de produção intelectual e atuação ativa na grande mídia, o Prof. Elton Gomes centraliza suas análises estratégicas para subsidiar tomadas de decisão complexas em cenários de mercado e instabilidade geopolítica.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SEÇÃO MÍDIA & ENTREVISTAS -->
+<section id="midia" class="secao-midia-focada">
+    <div class="container-midia-central">
+        <h2 class="titulo-secao">Mídia & Entrevistas</h2>
+        <div id="listaMidia"></div>
+    </div>
+</section>
+    <!-- 5. SEÇÃO ARTIGOS & PUBLICAÇÕES -->
+    <section id="publicacoes" class="container-acervo">
+        <h2 class="titulo-secao">Artigos & Publicações</h2>
+        <div class="grid-artigos" id="gridArtigos"></div>
+    </section>
+
+    <!-- 6. SEÇÃO GALERIA DE FOTOS -->
+    <section id="galeria" class="secao-galeria">
+        <div class="container-secao">
+            <h2 class="titulo-secao">Galeria de Eventos</h2>
+            <div class="grid-galeria">
+    <figure class="item-galeria">
+        <img src="assets/imagens/entrevista-palavra-aberta.webp" alt="Participação especial no programa Palavra Aberta">
+        <figcaption>Participação especial no programa Palavra Aberta</figcaption>
+    </figure>
+    <figure class="item-galeria">
+        <img src="assets/imagens/palestra-conferencia.webp" alt="Prof. Elton Gomes durante palestra acadêmica">
+        <figcaption>Palestra acadêmica</figcaption>
+    </figure>
+    <figure class="item-galeria">
+        <img src="assets/imagens/palestra-eleicoes-americanas-ufpi.webp" alt="Palestra: As eleições americanas e suas implicações sistêmicas — UFPI">
+        <figcaption>Eleições Americanas e Implicações Sistêmicas — UFPI</figcaption>
+    </figure>
+</div>
+        </div>
+    </section>
+
+    <!-- 7. SEÇÃO DE CONTATO, REDES SOCIAIS & SIMULADOR -->
+    <section id="contato" class="secao-contato">
+        <div class="container-contato-flex">
+            
+            <!-- Coluna Esquerda: Canais e Redes -->
+            <div class="info-contato-direto">
+                <h2 class="titulo-secao-esquerda">Contato Direto</h2>
+                <p class="subtitulo-contato">Escolha o canal de preferência ou utilize as redes oficiais do Professor.</p>
+                
+                <div class="bloco-canal">
+                    <strong>📧 E-mail:</strong>
+                    <p><a href="mailto:contato@eltongomes.com.br">contato@eltongomes.com.br</a></p>
+                </div>
+
+                <div class="bloco-canal">
+                    <strong>📞 Telefone:</strong>
+                    <p><a href="tel:+5581997860554">(81) 99786-0554</a></p>
+                </div>
+
+                <div class="bloco-canal">
+                    <strong>🟢 WhatsApp:</strong>
+                    <p><a href="https://wa.me/5581997860554" target="_blank">(81) 99786-0554</a></p>
+                </div>
+
+                <div class="redes-sociais-contato">
+                    <strong>Redes Sociais:</strong>
+                    <div class="icones-redes-grid">
+                        <a href="https://wa.me/5581997860554" target="_blank" class="rede-link whatsapp" title="Falar no WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/elton-gomes-dos-reis-898959193/" target="_blank" class="rede-link linkedin" title="Acessar LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/elton.gomes.reis/" target="_blank" class="rede-link instagram" title="Acessar Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/elton.gomes.636" target="_blank" class="rede-link facebook" title="Acessar Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna Direita: O Simulador -->
+            <div class="formulario-simulador-coluna">
+                <div class="card-simulador">
+                    <h3 class="titulo-simulador-caixa">Simulador de Eventos</h3>
+                    
+                    <div id="passo1" class="passo-simulador ativo">
+                        <p class="pergunta">1. Qual é o formato do seu evento?</p>
+                        <div class="opcoes-grid">
+                            <button type="button" class="btn-opcao" onclick="definirEscolha('formato', 'Palestra Corporativa', 1)">Palestra Corporativa</button>
+                            <button type="button" class="btn-opcao" onclick="definirEscolha('formato', 'Entrevista / Mídia', 1)">Entrevista / Mídia</button>
+                            <button type="button" class="btn-opcao" onclick="definirEscolha('formato', 'Consultoria Privada', 1)">Consultoria Privada</button>
+                        </div>
+                    </div>
+                    
+                    <div id="passo2" class="passo-simulador" style="display:none;">
+                        <p class="pergunta">2. Qual é a temática principal de interesse?</p>
+                        <div class="opcoes-grid">
+                            <button type="button" class="btn-opcao" onclick="definirEscolha('tema', 'Geopolítica Internacional', 2)">Geopolítica Internacional</button>
+                            <button type="button" class="btn-opcao" onclick="definirEscolha('tema', 'Mercado Livre & Economia', 2)">Mercado Livre & Economia</button>
+                            <button type="button" class="btn-opcao" onclick="definirEscolha('tema', 'Análise de Conjuntura Política', 2)">Conjuntura Política</button>
+                        </div>
+                    </div>
+                    
+                    <div id="passo3" class="passo-simulador" style="display:none;">
+                        <p class="pergunta">3. Preencha os detalhes para agendamento</p>
+                        <form id="formSimulador" onsubmit="processarEnvio(event)">
+                            <input type="text" id="simNome" placeholder="Seu Nome Completo" required class="campo-input">
+                            <input type="text" id="simEmpresa" placeholder="Empresa / Veículo de Imprensa" required class="campo-input">
+                            <input type="email" id="simEmail" placeholder="E-mail Corporativo" required class="campo-input">
+                            <input type="tel" id="simWhats" placeholder="WhatsApp para Retorno" required class="campo-input">
+                            <button type="submit" class="btn-concluir">Gerar Proposta de Agenda</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 8. MODAL DE CONTATO DE URGÊNCIA -->
+    <div id="modalUrgente" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar" onclick="toggleModal('modalUrgente')">&times;</span>
+            <h3>🚨 Plantão de Imprensa - Contato de Urgência</h3>
+            <p>Produtor, preencha os dados abaixo. Retornaremos imediatamente.</p>
+            <form id="formUrgente" onsubmit="enviarContatoUrgente(event)">
+                <input type="text" id="urgNome" placeholder="Seu Nome" required class="campo-input">
+                <input type="text" id="urgVeiculo" placeholder="Veículo de Mídia (ex: CNN)" required class="campo-input">
+                <input type="tel" id="urgWhats" placeholder="WhatsApp da Produção" required class="campo-input">
+                <button type="submit" class="btn-principal">Solicitar Fonte Agora</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 9. RODAPÉ OFICIAL -->
+    <footer class="rodape">
+        <p>&copy; 2026 Prof. Dr. Elton Gomes. Todos os direitos reservados.</p>
+        <p style="font-size:8.5pt; color:#a09285;">Desenvolvimento Estratégico & Engenharia de Conversão: <strong>Ênio Max.Tech</strong></p>
+    </footer>
+
+    <script src="dados.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
