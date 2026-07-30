@@ -27,10 +27,10 @@ const ACERVO_INTELECTUAL = [
 const MIDIA_DESTAQUES = [
     {
         tipo: "video",
-        tag: "📺 Participação Especial | TMC News",
-        titulo: "Análise Geopolítica: Ações Estratégicas dos EUA na Venezuela",
-        resumo: "Nesta entrevista analítica, o Prof. Dr. Elton Gomes debate os desdobramentos de segurança, as dinâmicas de poder e as teorias das relações internacionais aplicadas à intervenção e captura de lideranças no cenário bolivariano, desmistificando os reais interesses de Estado envolvidos na geopolítica das Américas.",
-        videoId: "d7RNDAoJOME"
+        tag: "📺 Participação Especial | O POVO News",
+        titulo: "Lula x Milei: O Impacto da Crise Diplomática entre Brasil e Argentina",
+        resumo: "Nesta participação, o Prof. Dr. Elton Gomes analisa o agravamento da crise diplomática entre Brasil e Argentina após as recentes trocas de farpas entre os presidentes Lula e Milei, discutindo os desdobramentos para as relações bilaterais e o futuro do Mercosul.",
+        videoId: "S4l6Yov6kOI"
     },
     {
         tipo: "foto",
@@ -41,9 +41,9 @@ const MIDIA_DESTAQUES = [
     },
     {
         tipo: "video",
-        tag: "📻 Entrevista | Rádio Jornal Teresina",
-        titulo: "Entrevista para a Rádio Jornal Teresina",
-        resumo: "Entrevista do Prof. Dr. Elton Gomes à Rádio Jornal Teresina, com análises sobre conjuntura política e relações internacionais.",
-        videoId: "GhJhFyH6vjI"
+        tag: "📺 Participação Especial | TMC News",
+        titulo: "Análise Geopolítica: Ações Estratégicas dos EUA na Venezuela",
+        resumo: "Nesta entrevista analítica, o Prof. Dr. Elton Gomes debate os desdobramentos de segurança, as dinâmicas de poder e as teorias das relações internacionais aplicadas à intervenção e captura de lideranças no cenário bolivariano, desmistificando os reais interesses de Estado envolvidos na geopolítica das Américas.",
+        videoId: "d7RNDAoJOME"
     }
 ];

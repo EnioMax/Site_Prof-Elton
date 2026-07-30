@@ -93,7 +93,7 @@ function processarEnvio(evento) {
     enviarParaDestinatarios(mensagemTexto, { nome, empresa, email, whats, tipo: "Simulador" });
 }
 
-// Envio do Plantão Urgente
+// Envio do Contato Rápido (botão flutuante)
 function enviarContatoUrgente(evento) {
     evento.preventDefault();
 
@@ -102,13 +102,13 @@ function enviarContatoUrgente(evento) {
     const whats = document.getElementById("urgWhats").value;
 
     const mensagemTexto = `🚨 NOVO CONTATO CAPTADO - ÊNIO MAX.TECH%0A%0A` +
-        `• Tipo: Plantão de Imprensa (URGENTE)%0A` +
-        `• Produtor: ${nome}%0A` +
-        `• Veículo de Mídia: ${veiculo}%0A%0A` +
+        `• Tipo: Contato Rápido (Botão Flutuante)%0A` +
+        `• Nome: ${nome}%0A` +
+        `• Empresa/Instituição: ${veiculo}%0A%0A` +
         `📞 DADOS DE CONTATO DIRETO:%0A` +
         `• WhatsApp: ${whats}`;
 
-    enviarParaDestinatarios(mensagemTexto, { nome, veiculo, whats, tipo: "Plantão Urgente" });
+    enviarParaDestinatarios(mensagemTexto, { nome, veiculo, whats, tipo: "Contato Rápido" });
 }
 
 // Direcionamento e registro final do Lead
@@ -117,6 +117,6 @@ function enviarParaDestinatarios(mensagemHTML, dadosObjeto) {
     console.log("Lead salvo com sucesso no banco de dados da Ênio Max.Tech:", dadosObjeto);
 
     // 2. Redirecionamento Dinâmico para o WhatsApp do Assessor/Professor
-    const telefoneAssessor = "5586999999999"; // SUBSTITUA pelo número real do Prof. Elton (Ex: DDD + Número sem espaços)
+    const telefoneAssessor = "5581997860554"; // WhatsApp real do Prof. Elton
     window.open(`https://api.whatsapp.com/send?phone=${telefoneAssessor}&text=${mensagemHTML}`, '_blank');
 }

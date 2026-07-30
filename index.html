@@ -12,10 +12,9 @@
 </head>
 <body>
 
-    <!-- Botão Flutuante de Urgência (Plantão de Imprensa) -->
+    <!-- Botão Flutuante de Contato Rápido -->
     <div class="plantao-imprensa" id="plantaoBtn" onclick="toggleModal('modalUrgente')">
-        <span class="ponto-vivo"></span>
-        <span class="texto-plantao">Plantão de Imprensa (Urgente)</span>
+        <span class="texto-plantao">Fale com o Prof. Elton</span>
     </div>
 
     <!-- 1. CABEÇALHO & MENU DE NAVEGAÇÃO -->
@@ -35,7 +34,6 @@
     <!-- 2. HERO SECTION (Banner de Capa) -->
     <section id="sobre" class="hero">
         <div class="hero-conteudo">
-            <a href="#contato" class="btn-principal">Agendar Palestra ou Entrevista</a>
         </div>
     </section>
 
@@ -43,12 +41,14 @@
     <section id="perfil" class="secao-biografia">
         <div class="container-biografia">
             <div class="foto-perfil">
-                <img src="assets/imagens/elton-perfil.jpg" alt="Prof. Dr. Elton Gomes" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="placeholder-foto">[Foto de Perfil]</div> 
+                <img src="assets/imagens/ChatGPT_Imagem-hero-2.png" alt="Prof. Dr. Elton Gomes">
             </div>
+
             <div class="texto-biografia">
                 <h2>Quem é o Prof. Dr. Elton Gomes?</h2>
-                <p>Doutor in Ciência Política, analista de conjuntura nacional e relações internacionais. Com mais de duas décadas de produção intelectual e atuação ativa na grande mídia, o Prof. Elton Gomes centraliza suas análises estratégicas para subsidiar tomadas de decisão complexas em cenários de mercado e instabilidade geopolítica.</p>
+                <h3>Ciência Política • Geopolítica • Relações Internacionais</h3>
+                <p>Compreender a política internacional exige mais do que acompanhar notícias: exige análise, método e contexto.</p>
+                <p>Doutor em Ciência Política, produz pesquisas, análises e conteúdos especializados sobre política, estratégia e o cenário internacional contemporâneo.</p>
             </div>
         </div>
     </section>
@@ -57,6 +57,7 @@
 <section id="midia" class="secao-midia-focada">
     <div class="container-midia-central">
         <h2 class="titulo-secao">Mídia & Entrevistas</h2>
+        <p class="subtitulo-secao">Análises sobre geopolítica e relações internacionais em rádio, TV e imprensa nacional</p>
         <div id="listaMidia"></div>
     </div>
 </section>
@@ -169,17 +170,17 @@
         </div>
     </section>
 
-    <!-- 8. MODAL DE CONTATO DE URGÊNCIA -->
+    <!-- 8. MODAL DE CONTATO -->
     <div id="modalUrgente" class="modal">
         <div class="modal-conteudo">
             <span class="fechar" onclick="toggleModal('modalUrgente')">&times;</span>
-            <h3>🚨 Plantão de Imprensa - Contato de Urgência</h3>
-            <p>Produtor, preencha os dados abaixo. Retornaremos imediatamente.</p>
+            <h3>Fale com o Prof. Elton</h3>
+            <p>Preencha os dados abaixo e entraremos em contato o quanto antes.</p>
             <form id="formUrgente" onsubmit="enviarContatoUrgente(event)">
                 <input type="text" id="urgNome" placeholder="Seu Nome" required class="campo-input">
-                <input type="text" id="urgVeiculo" placeholder="Veículo de Mídia (ex: CNN)" required class="campo-input">
-                <input type="tel" id="urgWhats" placeholder="WhatsApp da Produção" required class="campo-input">
-                <button type="submit" class="btn-principal">Solicitar Fonte Agora</button>
+                <input type="text" id="urgVeiculo" placeholder="Empresa / Instituição / Veículo" required class="campo-input">
+                <input type="tel" id="urgWhats" placeholder="WhatsApp para Retorno" required class="campo-input">
+                <button type="submit" class="btn-principal">Enviar Contato</button>
             </form>
         </div>
     </div>
