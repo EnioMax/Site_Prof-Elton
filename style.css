@@ -80,7 +80,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: url('assets/imagens/hearder-imagem.webp') no-repeat center 35%;
+    background: url('assets/imagens/hero/imagem-topo.webp') no-repeat center 35%;
     background-size: cover;
     filter: brightness(1.05) contrast(0.9);
     z-index: 0;
@@ -554,6 +554,69 @@ body {
     margin-bottom: 5px;
 }
 
+/* 7.1 SOLICITAÇÃO DE AGENDA - CASCATA (Etapa 1 -> Etapa 2) */
+.subtitulo-agenda {
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Destaque visual do botão de modalidade selecionado */
+.btn-opcao.ativo {
+    background-color: var(--cor-secundaria);
+    color: #ffffff;
+    border-color: var(--cor-secundaria);
+}
+
+/* Etapa 2: começa escondida e desliza suavemente quando ganha .visivel */
+.dados-agenda {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-10px);
+    margin-top: 0;
+    transition: max-height 0.5s ease, opacity 0.4s ease, transform 0.4s ease, margin-top 0.4s ease;
+}
+
+.dados-agenda.visivel {
+    max-height: 900px;
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 30px;
+}
+
+.titulo-formulario {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--cor-primaria);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.texto-formulario {
+    font-size: 0.95rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.linha-dupla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.linha-dupla label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--cor-primaria);
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
 /* 8. RODAPÉ */
 .rodape {
     background-color: var(--cor-primaria);
@@ -732,5 +795,8 @@ body {
     }
     .foto-perfil {
         max-width: 100%;
+    }
+    .linha-dupla {
+        grid-template-columns: 1fr;
     }
 }

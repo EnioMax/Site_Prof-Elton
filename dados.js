@@ -1,26 +1,26 @@
 // dados.js - Repositório de Capital Intelectual do Prof. Elton Gomes
 const ACERVO_INTELECTUAL = [
     {
-        titulo: "Entrevista sobre a Crise de Integração Econômica na América Latina",
-        tipo: "Entrevista de TV",
-        veiculo: "GloboNews / Bom Dia Brasil",
-        link: "https://g1.globo.com", // Aqui você colocará o link real depois
+        titulo: "Ação do Brasil na OMC contra tarifas dos EUA: Análise Geopolítica",
+        tipo: "Análise na Imprensa",
+        veiculo: "G1 / Economia",
+        link: "https://g1.globo.com/economia/noticia/2026/07/30/mais-simbolico-do-que-efetivo-por-que-o-brasil-foi-a-omc-contra-o-tarifaco-mesmo-com-o-orgao-enfraquecido.ghtml", // Aqui você colocará o link real depois
         categoria: "Geopolítica"
     },
     {
-        titulo: "O Papel do Livre Mercado no Desenvolvimento dos Países Emergentes",
-        tipo: "Artigo Opinativo",
-        veiculo: "Instituto Rothbard",
-        link: "https://rothbardbrasil.com",
-        categoria: "Economia"
+        titulo: "Reconciliação com Michelle empolga campanha de Flávio Bolsonaro e sugere nova fase",
+        tipo: "Análise na Imprensa",
+        veiculo: " Gazeta do Povo",
+        link: "https://www.gazetadopovo.com.br/republica/reconciliacao-com-michelle-empolga-campanha-de-flavio-bolsonaro-e-sugere-nova-fase/",
+        categoria: "Política Nacional"
     },
-    {
-        titulo: "Perspectivas das Reformas Estruturais Brasileiras para o Próximo Biênio",
-        tipo: "Análise Escrita",
-        veiculo: "Relatório Consultoria",
-        link: "https://consultoriaexemplo.com",
-        categoria: "Política"
-    }
+   {
+        titulo: "ND Mais: Como o Congresso Nacional ampliou seu poder através das emendas parlamentares",
+        tipo: "PARECER DE ESPECIALISTA",
+        veiculo: "ND Mais",
+        link: "https://ndmais.com.br/politica/emendas-parlamentares-como-o-congresso-ganhou-poder/",
+        categoria: "Política Nacional"
+    },
 ];
 
 // Repositório de aparições na mídia (vídeo ou foto)
@@ -37,7 +37,7 @@ const MIDIA_DESTAQUES = [
         tag: "📺 Participação Especial | Palavra Aberta",
         titulo: "Entrevista no programa Palavra Aberta",
         resumo: "Participação do Prof. Dr. Elton Gomes como convidado especial no programa Palavra Aberta, discutindo temas de conjuntura política e relações internacionais.",
-        imagem: "assets/imagens/entrevista-palavra-aberta.webp"
+        imagem: "assets/imagens/midia/entrevista-palavra-aberta.webp"
     },
     {
         tipo: "video",
