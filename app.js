@@ -39,19 +39,31 @@ function renderizarMidia() {
     const container = document.getElementById("listaMidia");
     if (!container) return;
 
-    container.innerHTML = MIDIA_DESTAQUES.map(item => `
+    container.innerHTML = MIDIA_DESTAQUES.map(item => {
+        const href = item.tipo === "matéria" && item.link ? esc(item.link) : null;
+        return `
         <div class="bloco-video-focado">
             ${item.tipo === "video" ? `
                 <div class="box-video-yt-novo">
                     <iframe src="https://www.youtube.com/embed/${esc(item.videoId)}" title="${esc(item.titulo)}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>` : item.tipo === "matéria" ? `
                 <div class="box-video-yt-novo ${item.imagem ? '' : 'sem-imagem'}">
-                    ${item.imagem
-                        ? `<img src="${esc(item.imagem)}" alt="${esc(item.titulo)}" class="midia-foto" loading="lazy">`
-                        : `<div class="midia-materia-placeholder">
-                               <i class="fas fa-newspaper"></i>
-                               <span>Matéria na imprensa</span>
-                           </div>`
+                    ${href
+                        ? `<a class="midia-materia-link" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="Abrir matéria: ${esc(item.titulo)}">
+                            ${item.imagem
+                                ? `<img src="${esc(item.imagem)}" alt="${esc(item.titulo)}" class="midia-foto" loading="lazy">`
+                                : `<span class="midia-materia-placeholder">
+                                       <i class="fas fa-newspaper"></i>
+                                       <span>Matéria na imprensa</span>
+                                   </span>`
+                            }
+                           </a>`
+                        : (item.imagem
+                            ? `<img src="${esc(item.imagem)}" alt="${esc(item.titulo)}" class="midia-foto" loading="lazy">`
+                            : `<span class="midia-materia-placeholder">
+                                   <i class="fas fa-newspaper"></i>
+                                   <span>Matéria na imprensa</span>
+                               </span>`)
                     }
                     <span class="midia-materia-badge"><i class="fas fa-newspaper"></i> Matéria na imprensa</span>
                 </div>` : `
@@ -60,12 +72,14 @@ function renderizarMidia() {
                 </div>`}
             <div class="info-video-texto-novo">
                 <span class="tag-canal-nova">${esc(item.tag)}</span>
-                <h3 class="titulo-video-novo">${esc(item.titulo)}</h3>
+                ${href
+                    ? `<h3 class="titulo-video-novo"><a class="midia-titulo-link" href="${href}" target="_blank" rel="noopener noreferrer">${esc(item.titulo)}</a></h3>`
+                    : `<h3 class="titulo-video-novo">${esc(item.titulo)}</h3>`}
                 <p class="resumo-video-novo">${esc(item.resumo)}</p>
-                ${item.tipo === "matéria" && item.link ? `<a class="link-conteudo" href="${esc(item.link)}" target="_blank" rel="noopener noreferrer">Ler matéria →</a>` : ''}
+                ${href ? `<a class="link-conteudo" href="${href}" target="_blank" rel="noopener noreferrer">Ler matéria →</a>` : ''}
             </div>
-        </div>
-    `).join('');
+        </div>`;
+    }).join('');
 }
 
 // 2. Controle dos Modais (Abre, Fecha, ESC, clique fora e gestão de foco)

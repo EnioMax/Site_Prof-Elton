@@ -723,6 +723,30 @@ body {
     object-fit: cover; /* mesmo enquadramento responsivo do iframe, aplicado a fotos */
 }
 
+/* Card de matéria inteiro clicável (imagem + título + "Ler matéria") */
+.midia-materia-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.midia-materia-link:hover img.midia-foto {
+    opacity: 0.92;
+    transition: opacity 0.2s ease;
+}
+
+.midia-titulo-link {
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+.midia-titulo-link:hover {
+    text-decoration: underline;
+}
+
 /* Área de imagem dos cards de matéria na seção Mídia & Entrevistas */
 .box-video-yt-novo.sem-imagem {
     background: linear-gradient(135deg, #f4eee6, #e8e2dc);
