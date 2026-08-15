@@ -28,14 +28,15 @@ const MIDIA_DESTAQUES = [
     {
         tipo: "matéria",
         tag: "Gazeta do Povo",
-        titulo: "Candidatura de Joaquim Barbosa nasce minada pela polarização",
+        titulo: "Relação do PT com Foro de SP engaja oposição e pode pautar eleições de 2026",
         resumo: "Análise do Prof. Dr. Elton Gomes publicada na imprensa.",
         veiculo: "Gazeta do Povo",
-        link: "https://www.gazetadopovo.com.br/eleicoes/2026/candidatura-de-joaquim-barbosa-ja-nasce-cercada-de-descrenca-e-obstaculos/",
-        imagem: "https://media.gazetadopovo.com.br/2022/01/11120451/joaquim-barbosa-crop-20220111150435.jpg",
+        link: "https://www.gazetadopovo.com.br/republica/relacao-do-pt-com-foro-de-sp-engaja-oposicao-e-pode-pautar-eleicoes-de-2026/",
+        imagem: "https://media.gazetadopovo.com.br/2026/01/05142435/52936060313_a7962d4de1_o-scaled.jpg",
         automatico: true,
     },
 
+    
     
     
     
