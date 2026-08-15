@@ -26,6 +26,16 @@ const ACERVO_INTELECTUAL = [
 // Repositório de aparições na mídia (vídeo ou foto)
 const MIDIA_DESTAQUES = [
     {
+        tipo: "mat??ria",
+        tag: "Gazeta do Povo",
+        titulo: "Candidatura de Joaquim Barbosa nasce minada pela polarização",
+        resumo: "An??lise do Prof. Dr. Elton Gomes publicada na imprensa.",
+        veiculo: "Gazeta do Povo",
+        link: "https://www.gazetadopovo.com.br/eleicoes/2026/candidatura-de-joaquim-barbosa-ja-nasce-cercada-de-descrenca-e-obstaculos/",
+        automatico: true,
+    },
+
+    {
         tipo: "video",
         tag: "📺 Participação Especial | O POVO News",
         titulo: "Lula x Milei: O Impacto da Crise Diplomática entre Brasil e Argentina",
