@@ -27,14 +27,16 @@ const ACERVO_INTELECTUAL = [
 const MIDIA_DESTAQUES = [
     {
         tipo: "matéria",
-        tag: "Imprensa",
-        titulo: "Participação do Prof. Dr. Elton Gomes",
+        tag: "Gazeta do Povo",
+        titulo: "Candidatura de Joaquim Barbosa nasce minada pela polarização",
         resumo: "Análise do Prof. Dr. Elton Gomes publicada na imprensa.",
-        veiculo: "Imprensa",
-        link: "",
+        veiculo: "Gazeta do Povo",
+        link: "https://www.gazetadopovo.com.br/eleicoes/2026/candidatura-de-joaquim-barbosa-ja-nasce-cercada-de-descrenca-e-obstaculos/",
+        imagem: "https://media.gazetadopovo.com.br/2022/01/11120451/joaquim-barbosa-crop-20220111150435.jpg",
         automatico: true,
     },
 
+    
     
     
     {
