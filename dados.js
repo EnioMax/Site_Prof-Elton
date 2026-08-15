@@ -28,6 +28,17 @@ const MIDIA_DESTAQUES = [
     {
         tipo: "matéria",
         tag: "Gazeta do Povo",
+        titulo: "Moraes autoriza X a retomar funcionamento no Brasil após multa",
+        resumo: "Análise do Prof. Dr. Elton Gomes publicada na imprensa.",
+        veiculo: "Gazeta do Povo",
+        link: "https://www.gazetadopovo.com.br/republica/moraes-autoriza-x-a-retomar-funcionamento-no-brasil-apos-multa/",
+        imagem: "https://media.gazetadopovo.com.br/2019/12/17112031/meta-image-gazeta-do-povo-new.png",
+        automatico: true,
+    },
+
+    {
+        tipo: "matéria",
+        tag: "Gazeta do Povo",
         titulo: "Relação do PT com Foro de SP engaja oposição e pode pautar eleições de 2026",
         resumo: "Análise do Prof. Dr. Elton Gomes publicada na imprensa.",
         veiculo: "Gazeta do Povo",
@@ -54,11 +65,4 @@ const MIDIA_DESTAQUES = [
         resumo: "Participação do Prof. Dr. Elton Gomes como convidado especial no programa Palavra Aberta, discutindo temas de conjuntura política e relações internacionais.",
         imagem: "assets/imagens/midia/entrevista-palavra-aberta.webp"
     },
-    {
-        tipo: "video",
-        tag: "📺 Participação Especial | TMC News",
-        titulo: "Análise Geopolítica: Ações Estratégicas dos EUA na Venezuela",
-        resumo: "Nesta entrevista analítica, o Prof. Dr. Elton Gomes debate os desdobramentos de segurança, as dinâmicas de poder e as teorias das relações internacionais aplicadas à intervenção e captura de lideranças no cenário bolivariano, desmistificando os reais interesses de Estado envolvidos na geopolítica das Américas.",
-        videoId: "d7RNDAoJOME"
-    }
-];
+    ];
