@@ -4,31 +4,23 @@ const ACERVO_INTELECTUAL = [
         titulo: "Ação do Brasil na OMC contra tarifas dos EUA: Análise Geopolítica",
         tipo: "Análise na Imprensa",
         veiculo: "G1 / Economia",
-        link: "https://g1.globo.com/economia/noticia/2026/07/30/mais-simbolico-do-que-efetivo-por-que-o-brasil-foi-a-omc-contra-o-tarifaco-mesmo-com-o-orgao-enfraquecido.ghtml", // Aqui você colocará o link real depois
+        link: "https://g1.globo.com/economia/noticia/2026/07/30/mais-simbolico-do-que-efetivo-por-que-o-brasil-foi-a-omc-contra-o-tarifaco-mesmo-com-o-orgao-enfraquecido.ghtml",
         categoria: "Geopolítica"
     },
     {
         titulo: "Reconciliação com Michelle empolga campanha de Flávio Bolsonaro e sugere nova fase",
         tipo: "Análise na Imprensa",
-        veiculo: " Gazeta do Povo",
+        veiculo: "Gazeta do Povo",
         link: "https://www.gazetadopovo.com.br/republica/reconciliacao-com-michelle-empolga-campanha-de-flavio-bolsonaro-e-sugere-nova-fase/",
         categoria: "Política Nacional"
     },
-   {
+    {
         titulo: "ND Mais: Como o Congresso Nacional ampliou seu poder através das emendas parlamentares",
-        tipo: "PARECER DE ESPECIALISTA",
+        tipo: "Parecer de Especialista",
         veiculo: "ND Mais",
         link: "https://ndmais.com.br/politica/emendas-parlamentares-como-o-congresso-ganhou-poder/",
         categoria: "Política Nacional"
-    },
-
-    {
-        titulo: "Ciência Política: origens e formação",
-        tipo: "Análise na Imprensa",
-        veiculo: "YouTube",
-        link: "https://www.youtube.com/watch?v=saYf8xp2Lb0",
-        categoria: "Análise na Imprensa",
-    },
+    }
 ];
 
 // Repositório de aparições na mídia (vídeo ou foto)
