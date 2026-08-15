@@ -21,6 +21,14 @@ const ACERVO_INTELECTUAL = [
         link: "https://ndmais.com.br/politica/emendas-parlamentares-como-o-congresso-ganhou-poder/",
         categoria: "Política Nacional"
     },
+
+    {
+        titulo: "Ciência Política: origens e formação",
+        tipo: "Análise na Imprensa",
+        veiculo: "YouTube",
+        link: "https://www.youtube.com/watch?v=saYf8xp2Lb0",
+        categoria: "Análise na Imprensa",
+    },
 ];
 
 // Repositório de aparições na mídia (vídeo ou foto)
