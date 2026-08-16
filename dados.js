@@ -27,16 +27,6 @@ const ACERVO_INTELECTUAL = [
 const MIDIA_DESTAQUES = [
     {
         tipo: "matéria",
-        tag: "Imprensa",
-        titulo: "Participação do Prof. Dr. Elton Gomes",
-        resumo: "Análise do Prof. Dr. Elton Gomes publicada na imprensa.",
-        veiculo: "Imprensa",
-        link: "",
-        automatico: true,
-    },
-
-    {
-        tipo: "matéria",
         tag: "Gazeta do Povo",
         titulo: "Moraes autoriza X a retomar funcionamento no Brasil após multa",
         resumo: "Análise do Prof. Dr. Elton Gomes publicada na imprensa.",
@@ -68,4 +58,11 @@ const MIDIA_DESTAQUES = [
         resumo: "Nesta participação, o Prof. Dr. Elton Gomes analisa o agravamento da crise diplomática entre Brasil e Argentina após as recentes trocas de farpas entre os presidentes Lula e Milei, discutindo os desdobramentos para as relações bilaterais e o futuro do Mercosul.",
         videoId: "S4l6Yov6kOI"
     },
-        ];
+    {
+        tipo: "foto",
+        tag: "📺 Participação Especial | Palavra Aberta",
+        titulo: "Entrevista no programa Palavra Aberta",
+        resumo: "Participação do Prof. Dr. Elton Gomes como convidado especial no programa Palavra Aberta, discutindo temas de conjuntura política e relações internacionais.",
+        imagem: "assets/imagens/midia/entrevista-palavra-aberta.webp"
+    },
+    ];
