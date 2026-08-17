@@ -52,13 +52,11 @@ function renderizarVideos() {
 
     container.innerHTML = VIDEOS_YOUTUBE.map(item => {
         const ytUrl = 'https://www.youtube.com/watch?v=' + esc(item.videoId);
-        const thumbUrl = 'https://i.ytimg.com/vi/' + esc(item.videoId) + '/hqdefault.jpg';
         return `
         <div class="bloco-video-focado">
-            <a class="box-video-yt-novo box-video-thumb" href="${ytUrl}" target="_blank" rel="noopener noreferrer" aria-label="Assistir vídeo: ${esc(item.titulo)}">
-                <img src="${thumbUrl}" alt="${esc(item.titulo)}" class="midia-foto" loading="lazy">
-                <span class="play-yt-overlay"><i class="fab fa-youtube"></i></span>
-            </a>
+            <div class="box-video-yt-novo">
+                <iframe src="https://www.youtube.com/embed/${esc(item.videoId)}" title="${esc(item.titulo)}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            </div>
             <div class="info-video-texto-novo">
                 <span class="tag-canal-nova">${esc(item.tag)}</span>
                 <h3 class="titulo-video-novo"><a class="midia-titulo-link" href="${ytUrl}" target="_blank" rel="noopener noreferrer">${esc(item.titulo)}</a></h3>
