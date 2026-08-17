@@ -27,10 +27,10 @@ const ACERVO_INTELECTUAL = [
 const VIDEOS_YOUTUBE = [
     {
         tipo: "video",
-        tag: "📺 Participação Especial | O POVO News",
-        titulo: "Lula x Milei: O Impacto da Crise Diplomática entre Brasil e Argentina",
-        resumo: "Nesta participação, o Prof. Dr. Elton Gomes analisa o agravamento da crise diplomática entre Brasil e Argentina após as recentes trocas de farpas entre os presidentes Lula e Milei, discutindo os desdobramentos para as relações bilaterais e o futuro do Mercosul.",
-        videoId: "S4l6Yov6kOI"
+        tag: "📺 Participação Especial | TV Meio Norte",
+        titulo: "Ciência Política - Análise de Conjuntura",
+        resumo: "Nesta participação, o Prof. Dr. Elton Gomes apresenta análise de conjuntura política ao vivo na TV Meio Norte, discutindo cenário eleitoral, alianças partidárias e perspectivas para as eleições 2026.",
+        videoId: "OXhVkjFn8F4"
     }
 ];
 
