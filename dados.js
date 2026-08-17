@@ -39,6 +39,17 @@ const MATERIAS_IMPRENSA = [
     {
         tipo: "materia",
         tag: "Gazeta do Povo",
+        titulo: "TESTE: Artigo para decisão via WhatsApp",
+        resumo: "Análise do Prof. Dr. Elton Gomes publicada na imprensa.",
+        veiculo: "Gazeta do Povo",
+        link: "https://www.gazetadopovo.com.br/teste/",
+        imagem: "https://media.gazetadopovo.com.br/2019/12/17112031/meta-image-gazeta-do-povo-new.png",
+        automatico: true,
+    },
+
+    {
+        tipo: "materia",
+        tag: "Gazeta do Povo",
         titulo: "Pesquisa Quaest mostra como está a disputa para presidente",
         resumo: "Análise do Prof. Dr. Elton Gomes sobre pesquisa eleitoral e cenário político para as eleições de 2026.",
         veiculo: "Gazeta do Povo",
