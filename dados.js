@@ -28,6 +28,17 @@ const MIDIA_DESTAQUES = [
     {
         tipo: "matéria",
         tag: "Gazeta do Povo",
+        titulo: "Pesquisa Quaest mostra como está a disputa para presidente",
+        resumo: "Análise do Prof. Dr. Elton Gomes publicada na imprensa.",
+        veiculo: "Gazeta do Povo",
+        link: "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-pesquisa-presidente-agosto-2026/",
+        imagem: "https://media.gazetadopovo.com.br/2026/08/11172001/pesquisa-presidente-3.png",
+        automatico: true,
+    },
+
+    {
+        tipo: "matéria",
+        tag: "Gazeta do Povo",
         titulo: "Moraes autoriza X a retomar funcionamento no Brasil após multa",
         resumo: "Análise do Prof. Dr. Elton Gomes publicada na imprensa.",
         veiculo: "Gazeta do Povo",
@@ -58,11 +69,4 @@ const MIDIA_DESTAQUES = [
         resumo: "Nesta participação, o Prof. Dr. Elton Gomes analisa o agravamento da crise diplomática entre Brasil e Argentina após as recentes trocas de farpas entre os presidentes Lula e Milei, discutindo os desdobramentos para as relações bilaterais e o futuro do Mercosul.",
         videoId: "S4l6Yov6kOI"
     },
-    {
-        tipo: "foto",
-        tag: "📺 Participação Especial | Palavra Aberta",
-        titulo: "Entrevista no programa Palavra Aberta",
-        resumo: "Participação do Prof. Dr. Elton Gomes como convidado especial no programa Palavra Aberta, discutindo temas de conjuntura política e relações internacionais.",
-        imagem: "assets/imagens/midia/entrevista-palavra-aberta.webp"
-    },
-    ];
+        ];
