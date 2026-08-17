@@ -34,47 +34,72 @@ function renderizarAcervo() {
     `).join('');
 }
 
-// Renderiza os cards de mídia (vídeo, foto ou matéria) dinamicamente baseando-se no dados.js
+// Renderiza as duas subseções de mídia (vídeos + matérias)
 function renderizarMidia() {
-    const container = document.getElementById("listaMidia");
+    renderizarVideos();
+    renderizarMaterias();
+}
+
+// Renderiza os cards de vídeos do YouTube
+function renderizarVideos() {
+    const container = document.getElementById("listaVideos");
     if (!container) return;
 
-    container.innerHTML = MIDIA_DESTAQUES.map(item => {
-        const href = item.tipo === "matéria" && item.link ? esc(item.link) : null;
+    if (!VIDEOS_YOUTUBE || VIDEOS_YOUTUBE.length === 0) {
+        container.innerHTML = '<p class="sem-conteudo">Nenhum vídeo disponível no momento.</p>';
+        return;
+    }
+
+    container.innerHTML = VIDEOS_YOUTUBE.map(item => {
+        const ytUrl = 'https://www.youtube.com/watch?v=' + esc(item.videoId);
+        const thumbUrl = 'https://i.ytimg.com/vi/' + esc(item.videoId) + '/hqdefault.jpg';
         return `
         <div class="bloco-video-focado">
-            ${item.tipo === "video" ? `
-                <div class="box-video-yt-novo">
-                    <iframe src="https://www.youtube.com/embed/${esc(item.videoId)}" title="${esc(item.titulo)}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>` : item.tipo === "matéria" ? `
-                <div class="box-video-yt-novo ${item.imagem ? '' : 'sem-imagem'}">
-                    ${href
-                        ? `<a class="midia-materia-link" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="Abrir matéria: ${esc(item.titulo)}">
-                            ${item.imagem
-                                ? `<img src="${esc(item.imagem)}" alt="${esc(item.titulo)}" class="midia-foto" loading="lazy">`
-                                : `<span class="midia-materia-placeholder">
-                                       <i class="fas fa-newspaper"></i>
-                                       <span>Matéria na imprensa</span>
-                                   </span>`
-                            }
-                           </a>`
-                        : (item.imagem
-                            ? `<img src="${esc(item.imagem)}" alt="${esc(item.titulo)}" class="midia-foto" loading="lazy">`
-                            : `<span class="midia-materia-placeholder">
-                                   <i class="fas fa-newspaper"></i>
-                                   <span>Matéria na imprensa</span>
-                               </span>`)
-                    }
-                    <span class="midia-materia-badge"><i class="fas fa-newspaper"></i> Matéria na imprensa</span>
-                </div>` : `
-                <div class="box-video-yt-novo">
-                    <img src="${esc(item.imagem)}" alt="${esc(item.titulo)}" class="midia-foto" loading="lazy">
-                </div>`}
+            <a class="box-video-yt-novo box-video-thumb" href="${ytUrl}" target="_blank" rel="noopener noreferrer" aria-label="Assistir vídeo: ${esc(item.titulo)}">
+                <img src="${thumbUrl}" alt="${esc(item.titulo)}" class="midia-foto" loading="lazy">
+                <span class="play-yt-overlay"><i class="fab fa-youtube"></i></span>
+            </a>
             <div class="info-video-texto-novo">
                 <span class="tag-canal-nova">${esc(item.tag)}</span>
+                <h3 class="titulo-video-novo"><a class="midia-titulo-link" href="${ytUrl}" target="_blank" rel="noopener noreferrer">${esc(item.titulo)}</a></h3>
+                <p class="resumo-video-novo">${esc(item.resumo)}</p>
+                <a class="link-conteudo" href="${ytUrl}" target="_blank" rel="noopener noreferrer">Assistir no YouTube →</a>
+            </div>
+        </div>`;
+    }).join('');
+}
+
+// Renderiza os cards de matérias jornalísticas
+function renderizarMaterias() {
+    const container = document.getElementById("listaMaterias");
+    if (!container) return;
+
+    if (!MATERIAS_IMPRENSA || MATERIAS_IMPRENSA.length === 0) {
+        container.innerHTML = '<p class="sem-conteudo">Nenhuma matéria disponível no momento.</p>';
+        return;
+    }
+
+    container.innerHTML = MATERIAS_IMPRENSA.map(item => {
+        const href = item.link ? esc(item.link) : null;
+        return `
+        <div class="bloco-video-focado">
+            <div class="box-video-yt-novo ${item.imagem ? '' : 'sem-imagem'}">
                 ${href
-                    ? `<h3 class="titulo-video-novo"><a class="midia-titulo-link" href="${href}" target="_blank" rel="noopener noreferrer">${esc(item.titulo)}</a></h3>`
-                    : `<h3 class="titulo-video-novo">${esc(item.titulo)}</h3>`}
+                    ? `<a class="midia-materia-link" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="Abrir matéria: ${esc(item.titulo)}">
+                        ${item.imagem
+                            ? `<img src="${esc(item.imagem)}" alt="${esc(item.titulo)}" class="midia-foto" loading="lazy">`
+                            : `<span class="midia-materia-placeholder"><i class="fas fa-newspaper"></i><span>Matéria na imprensa</span></span>`
+                        }
+                       </a>`
+                    : (item.imagem
+                        ? `<img src="${esc(item.imagem)}" alt="${esc(item.titulo)}" class="midia-foto" loading="lazy">`
+                        : `<span class="midia-materia-placeholder"><i class="fas fa-newspaper"></i><span>Matéria na imprensa</span></span>`)
+                }
+                <span class="midia-materia-badge"><i class="fas fa-newspaper"></i> ${esc(item.veiculo || item.tag)}</span>
+            </div>
+            <div class="info-video-texto-novo">
+                <span class="tag-canal-nova">${esc(item.tag)}</span>
+                <h3 class="titulo-video-novo">${href ? `<a class="midia-titulo-link" href="${href}" target="_blank" rel="noopener noreferrer">${esc(item.titulo)}</a>` : esc(item.titulo)}</h3>
                 <p class="resumo-video-novo">${esc(item.resumo)}</p>
                 ${href ? `<a class="link-conteudo" href="${href}" target="_blank" rel="noopener noreferrer">Ler matéria →</a>` : ''}
             </div>
