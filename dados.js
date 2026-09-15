@@ -45,5 +45,15 @@ const VIDEOS_YOUTUBE = [
 
 // Matérias jornalísticas - Publicações na imprensa
 const MATERIAS_IMPRENSA = [
+    {
+        tipo: "materia",
+        tag: "Imprensa",
+        titulo: "",
+        resumo: "Análise do Prof. Dr. Elton Gomes publicada na imprensa.",
+        veiculo: "Imprensa",
+        link: "",
+        automatico: true,
+    },
+
 
     ];
