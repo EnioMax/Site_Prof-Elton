@@ -36,4 +36,15 @@ const VIDEOS_YOUTUBE = [
 
 // Matérias jornalísticas - Publicações na imprensa
 const MATERIAS_IMPRENSA = [
+    {
+        tipo: "materia",
+        tag: "Gazeta do Povo",
+        titulo: "Teste final: fluxo completo com WhatsApp",
+        resumo: "Análise do Prof. Dr. Elton Gomes publicada na imprensa.",
+        veiculo: "Gazeta do Povo",
+        link: "https://www.gazetadopovo.com.br/republica/teste-final-wf3/",
+        imagem: "https://media.gazetadopovo.com.br/2019/12/17112031/meta-image-gazeta-do-povo-new.png",
+        automatico: true,
+    },
+
     ];
