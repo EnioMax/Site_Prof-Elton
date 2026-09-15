@@ -27,6 +27,15 @@ const ACERVO_INTELECTUAL = [
 const VIDEOS_YOUTUBE = [
     {
         tipo: "video",
+        tag: "📺 Participação | YouTube",
+        titulo: "Programa Tardiar 17/05 — BRICS vai mudar o mundo? Dr. Elton Gomes analisa o futuro do bloco",
+        resumo: "Análise em vídeo do Prof. Dr. Elton Gomes.",
+        videoId: "91OQ6FXVmjU",
+        automatico: true,
+    },
+
+    {
+        tipo: "video",
         tag: "📺 Participação Especial | TV Meio Norte",
         titulo: "Ciência Política - Análise de Conjuntura",
         resumo: "Nesta participação, o Prof. Dr. Elton Gomes apresenta análise de conjuntura política ao vivo na TV Meio Norte, discutindo cenário eleitoral, alianças partidárias e perspectivas para as eleições 2026.",
