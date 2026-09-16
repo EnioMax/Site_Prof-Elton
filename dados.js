@@ -70,14 +70,6 @@ const MATERIAS_IMPRENSA = [
         "imagem": "https://media.gazetadopovo.com.br/2026/01/05142435/52936060313_a7962d4de1_o-scaled.jpg"
     },
     {
-        "titulo": "Candidatura de Joaquim Barbosa nasce minada pela polarização",
-        "veiculo": "Gazeta do Povo",
-        "link": "https://www.gazetadopovo.com.br/eleicoes/2026/candidatura-de-joaquim-barbosa-ja-nasce-cercada-de-descrenca-e-obstaculos/",
-        "tag": "📰 Gazeta do Povo",
-        "resumo": "",
-        "imagem": "https://media.gazetadopovo.com.br/2022/01/11120451/joaquim-barbosa-crop-20220111150435.jpg"
-    },
-    {
         "titulo": "Boulos e João Campos ainda não animam a esquerda como futuros líderes do pós-Lula",
         "veiculo": "Gazeta do Povo",
         "link": "https://www.gazetadopovo.com.br/republica/boulos-e-joao-campos-ainda-nao-animam-a-esquerda-como-futuros-lideres-do-pos-lula/",
@@ -116,13 +108,5 @@ const MATERIAS_IMPRENSA = [
         "tag": "📰 YouTube",
         "resumo": "",
         "imagem": "https://i.ytimg.com/vi/ceQbAwpizO8/maxresdefault.jpg"
-    },
-    {
-        "titulo": "Programa Tardiar 17/05 — BRICS vai mudar o mundo? Dr. Elton Gomes analisa o futuro do bloco",
-        "veiculo": "YouTube",
-        "link": "https://www.youtube.com/watch?v=91OQ6FXVmjU",
-        "tag": "📰 YouTube",
-        "resumo": "",
-        "imagem": "https://i.ytimg.com/vi/91OQ6FXVmjU/hqdefault.jpg"
     }
 ];
