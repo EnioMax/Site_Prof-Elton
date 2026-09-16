@@ -47,6 +47,7 @@ const VIDEOS_YOUTUBE = [
 // Matérias jornalísticas - Publicações na imprensa
 // Matérias jornalísticas - Publicações na imprensa
 // Matérias jornalísticas - Publicações na imprensa
+// Matérias jornalísticas - Publicações na imprensa
 const MATERIAS_IMPRENSA = [
     {
         "titulo": "Pesquisa Quaest mostra como está a disputa para presidente",
