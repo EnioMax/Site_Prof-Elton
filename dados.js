@@ -44,7 +44,83 @@ const VIDEOS_YOUTUBE = [
 ];
 
 // Matérias jornalísticas - Publicações na imprensa
+// Matérias jornalísticas - Publicações na imprensa
 const MATERIAS_IMPRENSA = [
-
-
-    ];
+    {
+        "titulo": "Pesquisa Quaest mostra como está a disputa para presidente",
+        "veiculo": "",
+        "link": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-pesquisa-presidente-agosto-2026/",
+        "tag": "📰 ",
+        "resumo": ""
+    },
+    {
+        "titulo": "Teste publicação via n8n - matéria de validação",
+        "veiculo": "",
+        "link": "https://www.g1.globo.com/politica/noticia/2026/08/16/teste-validacao-n8n.ghtml",
+        "tag": "📰 ",
+        "resumo": ""
+    },
+    {
+        "titulo": "Moraes autoriza X a retomar funcionamento no Brasil após multa",
+        "veiculo": "",
+        "link": "https://www.gazetadopovo.com.br/republica/moraes-autoriza-x-a-retomar-funcionamento-no-brasil-apos-multa/",
+        "tag": "📰 ",
+        "resumo": ""
+    },
+    {
+        "titulo": "Relação do PT com Foro de SP engaja oposição e pode pautar eleições de 2026",
+        "veiculo": "",
+        "link": "https://www.gazetadopovo.com.br/republica/relacao-do-pt-com-foro-de-sp-engaja-oposicao-e-pode-pautar-eleicoes-de-2026/",
+        "tag": "📰 ",
+        "resumo": ""
+    },
+    {
+        "titulo": "Candidatura de Joaquim Barbosa nasce minada pela polarização",
+        "veiculo": "",
+        "link": "https://www.gazetadopovo.com.br/eleicoes/2026/candidatura-de-joaquim-barbosa-ja-nasce-cercada-de-descrenca-e-obstaculos/",
+        "tag": "📰 ",
+        "resumo": ""
+    },
+    {
+        "titulo": "Boulos e João Campos ainda não animam a esquerda como futuros líderes do pós-Lula",
+        "veiculo": "",
+        "link": "https://www.gazetadopovo.com.br/republica/boulos-e-joao-campos-ainda-nao-animam-a-esquerda-como-futuros-lideres-do-pos-lula/",
+        "tag": "📰 ",
+        "resumo": ""
+    },
+    {
+        "titulo": "Candidatura de Joaquim Barbosa nasce minada pela polarização",
+        "veiculo": "",
+        "link": "https://www.gazetadopovo.com.br/eleicoes/2026/candidatura-de-joaquim-barbosa-ja-nasce-cercada-de-descrenca-e-obstaculos/",
+        "tag": "📰 ",
+        "resumo": ""
+    },
+    {
+        "titulo": "Ciência Política: origens e formação",
+        "veiculo": "",
+        "link": "https://www.youtube.com/watch?v=saYf8xp2Lb0",
+        "tag": "📰 ",
+        "resumo": ""
+    },
+    {
+        "titulo": "Programa Tardiar 05/07 — A Tempestade no Oriente Médio: O Impacto Global do Conflito Israel-Irã",
+        "veiculo": "",
+        "link": "https://www.youtube.com/watch?v=LDFBiOECaNY",
+        "tag": "📰 ",
+        "resumo": ""
+    },
+    {
+        "titulo": "Programa Tardiar 17/05 — BRICS vai mudar o mundo? Dr. Elton Gomes analisa o futuro do bloco",
+        "veiculo": "",
+        "link": "https://www.youtube.com/watch?v=ceQbAwpizO8",
+        "tag": "📰 ",
+        "resumo": ""
+    },
+    {
+        "titulo": "Programa Tardiar 17/05 — BRICS vai mudar o mundo? Dr. Elton Gomes analisa o futuro do bloco",
+        "veiculo": "",
+        "link": "https://www.youtube.com/watch?v=91OQ6FXVmjU",
+        "tag": "📰 ",
+        "resumo": ""
+    }
+];
