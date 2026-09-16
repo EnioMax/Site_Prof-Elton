@@ -54,13 +54,6 @@ const MATERIAS_IMPRENSA = [
         "imagem": "https://media.gazetadopovo.com.br/2026/08/11172001/pesquisa-presidente-3.png"
     },
     {
-        "titulo": "Teste publicação via n8n - matéria de validação",
-        "veiculo": "G1",
-        "link": "https://www.g1.globo.com/politica/noticia/2026/08/16/teste-validacao-n8n.ghtml",
-        "tag": "📰 G1",
-        "resumo": ""
-    },
-    {
         "titulo": "Moraes autoriza X a retomar funcionamento no Brasil após multa",
         "veiculo": "Gazeta do Povo",
         "link": "https://www.gazetadopovo.com.br/republica/moraes-autoriza-x-a-retomar-funcionamento-no-brasil-apos-multa/",
