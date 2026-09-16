@@ -44,16 +44,6 @@ const VIDEOS_YOUTUBE = [
 ];
 
 // Matérias jornalísticas - Publicações na imprensa
-// Matérias jornalísticas - Publicações na imprensa
-// Matérias jornalísticas - Publicações na imprensa
-// Matérias jornalísticas - Publicações na imprensa
-// Matérias jornalísticas - Publicações na imprensa
-// Matérias jornalísticas - Publicações na imprensa
-// Matérias jornalísticas - Publicações na imprensa
-// Matérias jornalísticas - Publicações na imprensa
-// Matérias jornalísticas - Publicações na imprensa
-// Matérias jornalísticas - Publicações na imprensa
-// Matérias jornalísticas - Publicações na imprensa
 const MATERIAS_IMPRENSA = [
     {
         "titulo": "Pesquisa Quaest mostra como está a disputa para presidente",
@@ -106,30 +96,30 @@ const MATERIAS_IMPRENSA = [
     },
     {
         "titulo": "Ciência Política: origens e formação",
-        "veiculo": "youtube.com",
+        "veiculo": "YouTube",
         "link": "https://www.youtube.com/watch?v=saYf8xp2Lb0",
-        "tag": "📰 youtube.com",
+        "tag": "📰 YouTube",
         "resumo": ""
     },
     {
         "titulo": "Programa Tardiar 05/07 — A Tempestade no Oriente Médio: O Impacto Global do Conflito Israel-Irã",
-        "veiculo": "youtube.com",
+        "veiculo": "YouTube",
         "link": "https://www.youtube.com/watch?v=LDFBiOECaNY",
-        "tag": "📰 youtube.com",
+        "tag": "📰 YouTube",
         "resumo": ""
     },
     {
         "titulo": "Programa Tardiar 17/05 — BRICS vai mudar o mundo? Dr. Elton Gomes analisa o futuro do bloco",
-        "veiculo": "youtube.com",
+        "veiculo": "YouTube",
         "link": "https://www.youtube.com/watch?v=ceQbAwpizO8",
-        "tag": "📰 youtube.com",
+        "tag": "📰 YouTube",
         "resumo": ""
     },
     {
         "titulo": "Programa Tardiar 17/05 — BRICS vai mudar o mundo? Dr. Elton Gomes analisa o futuro do bloco",
-        "veiculo": "youtube.com",
+        "veiculo": "YouTube",
         "link": "https://www.youtube.com/watch?v=91OQ6FXVmjU",
-        "tag": "📰 youtube.com",
+        "tag": "📰 YouTube",
         "resumo": ""
     }
 ];
