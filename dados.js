@@ -91,7 +91,7 @@ const MATERIAS_IMPRENSA = [
         "link": "https://www.youtube.com/watch?v=saYf8xp2Lb0",
         "tag": "📰 YouTube",
         "resumo": "",
-        "imagem": "https://i.ytimg.com/vi/saYf8xp2Lb0/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4Ac4FgAKACooCDAgAEAEYZSBTKEUwDw==&amp;rs=AOn4CLDo5bPhNP82XUn11I4t4lkZVT294Q"
+        "imagem": "https://i.ytimg.com/vi/saYf8xp2Lb0/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4Ac4FgAKACooCDAgAEAEYZSBTKEUwDw==&rs=AOn4CLDo5bPhNP82XUn11I4t4lkZVT294Q"
     },
     {
         "titulo": "Programa Tardiar 05/07 — A Tempestade no Oriente Médio: O Impacto Global do Conflito Israel-Irã",

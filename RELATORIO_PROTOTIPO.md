@@ -42,11 +42,13 @@ Tabela principal **`itens_processados`** (banco `evolution_db`, usuário `evolut
 
 ### 2.3 Repositório do site (GitHub Pages)
 
-- **`dados.js`** — "fonte de verdade" dos dados exibidos; editado automaticamente pelo pipeline via API do GitHub (PUT, base64). Contém:
-  - `ACERVO_INTELECTUAL[]` — análises/artigos (curadoria manual, seção Acervo).
-  - `MIDIA_DESTAQUES[]` — cards da seção Mídia, com limite de **4 itens**: vídeos (`tipo: "video"`), fotos (`tipo: "foto"`) e matérias (`tipo: "matéria"` com `link` e `imagem` og:image).
-- **`app.js`** — renderiza os cards no DOM (`renderizarMidia()`), com links clicáveis na imagem, título e "Ler matéria →".
-- **`style.css` / `index.html`** — estilos e estrutura; cache-buster `?v=20260816`.
+- O frontend atualmente carregado por `index.html` usa **`dados.js`** como fonte de conteúdo:
+  - `ACERVO_INTELECTUAL[]` — análises e artigos exibidos na seção de publicações.
+  - `VIDEOS_YOUTUBE[]` — vídeos exibidos na subseção de participações em vídeo.
+  - `MATERIAS_IMPRENSA[]` — matérias exibidas na subseção de imprensa.
+- **`app.js`** renderiza esses três arrays. O arquivo **`materias.json` não é carregado pelo site** e, portanto, suas alterações não atualizam os cards publicados.
+- A lógica de publicação descrita nas seções seguintes refere-se ao protótipo n8n registrado neste relatório. O workflow não está versionado neste repositório e o formato `MIDIA_DESTAQUES[]` mencionado nessa implementação **não corresponde aos arrays usados atualmente pelo frontend**; não presumir que o pipeline documentado publique dados compatíveis sem validar sua implementação.
+- **`style.css` / `index.html`** definem a apresentação e a estrutura; os scripts atualmente usam cache-buster `?v=20260915`.
 
 ---
 
@@ -187,7 +189,10 @@ Atue como engenheiro sênior de automação (n8n, Docker, Node.js, GitHub Pages)
 
 CONTEXTO DO PROJETO
 Um site estático (repo GitHub EnioMax/Site_Prof-Elton) tem uma seção "Mídia" renderizada por
-app.js a partir de dados.js (arrays ACERVO_INTELECTUAL e MIDIA_DESTAQUES, limite de 4 itens).
+app.js a partir de dados.js (arrays VIDEOS_YOUTUBE e MATERIAS_IMPRENSA); o acervo usa
+ACERVO_INTELECTUAL. O arquivo materias.json não é carregado pelo frontend.
+O formato MIDIA_DESTAQUES usado pelo workflow descrito abaixo não é compatível com o frontend
+atual sem adaptação.
 Um pipeline em n8n (Docker, porta 5678, project 34HunOHzMxLinQHh) recebe a decisão do professor
 via WhatsApp (Evolution API em :8080), grava o status em Postgres (tabela itens_processados:
 status notificado|publicado|ignorado|decidir_depois) e publica a matéria editando dados.js via
@@ -198,7 +203,8 @@ FLUXO ATUAL
    payload {"event":"messages.upsert","data":{"message":{"conversation":"1"}}}
 2) Switch roteia resposta do professor: 1=Publicar, 2=Ignorar, 3=Decidir depois.
 3) Publicar -> UPDATE status='publicado' -> BuscarImagem (GET na URL p/ extrair og:image)
-   -> nó Code insere card no TOPO de MIDIA_DESTAQUES e remove a 4ª entrada (FIFO)
+   -> o código histórico do workflow insere card no TOPO de MIDIA_DESTAQUES e remove a 4ª
+   entrada (FIFO); adaptar o formato antes de usar esse fluxo com o frontend atual
    -> PUT dados.js -> confirmação via WhatsApp.
 4) Workflow "Relembrar decidir depois" (id 7NFjh3xnze1vXIHm, schedule 30min) reavisa itens
    em decidir_depois há mais de 24h. Está inactive.

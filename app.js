@@ -10,6 +10,15 @@ function esc(valor) {
         .replace(/'/g, '&#39;');
 }
 
+function urlSegura(valor) {
+    try {
+        const url = new URL(String(valor || ''));
+        return url.protocol === 'https:' ? url.href : null;
+    } catch {
+        return null;
+    }
+}
+
 // 1. Inicialização do Acervo e da Mídia assim que a página carrega
 document.addEventListener("DOMContentLoaded", () => {
     renderizarAcervo();
@@ -22,16 +31,18 @@ function renderizarAcervo() {
     const grid = document.getElementById("gridArtigos");
     if (!grid) return;
 
-    grid.innerHTML = ACERVO_INTELECTUAL.map(item => `
+    grid.innerHTML = ACERVO_INTELECTUAL.map(item => {
+        const href = urlSegura(item.link);
+        return `
         <article class="card-artigo">
             <div>
                 <span class="categoria-tag">${esc(item.categoria)} — ${esc(item.tipo)}</span>
                 <h4 class="titulo-artigo">${esc(item.titulo)}</h4>
                 <p class="veiculo-artigo">Veículo: ${esc(item.veiculo)}</p>
             </div>
-            <a class="link-conteudo" href="${esc(item.link)}" target="_blank" rel="noopener noreferrer">Acessar Conteúdo →</a>
-        </article>
-    `).join('');
+            ${href ? `<a class="link-conteudo" href="${esc(href)}" target="_blank" rel="noopener noreferrer">Acessar Conteúdo →</a>` : ''}
+        </article>`;
+    }).join('');
 }
 
 // Renderiza as duas subseções de mídia (vídeos + matérias)
@@ -78,19 +89,20 @@ function renderizarMaterias() {
     }
 
     container.innerHTML = MATERIAS_IMPRENSA.map(item => {
-        const href = item.link ? esc(item.link) : null;
+        const href = urlSegura(item.link);
+        const imagem = urlSegura(item.imagem);
         return `
-        <div class="bloco-video-focado">
-            <div class="box-video-yt-novo ${item.imagem ? '' : 'sem-imagem'}">
+        <article class="bloco-video-focado">
+            <div class="box-video-yt-novo ${imagem ? '' : 'sem-imagem'}">
                 ${href
                     ? `<a class="midia-materia-link" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="Abrir matéria: ${esc(item.titulo)}">
-                        ${item.imagem
-                            ? `<img src="${esc(item.imagem)}" alt="${esc(item.titulo)}" class="midia-foto" loading="lazy">`
+                        ${imagem
+                            ? `<img src="${esc(imagem)}" alt="${esc(item.titulo)}" class="midia-foto" loading="lazy">`
                             : `<span class="midia-materia-placeholder"><i class="fas fa-newspaper"></i><span>Matéria na imprensa</span></span>`
                         }
                        </a>`
-                    : (item.imagem
-                        ? `<img src="${esc(item.imagem)}" alt="${esc(item.titulo)}" class="midia-foto" loading="lazy">`
+                    : (imagem
+                        ? `<img src="${esc(imagem)}" alt="${esc(item.titulo)}" class="midia-foto" loading="lazy">`
                         : `<span class="midia-materia-placeholder"><i class="fas fa-newspaper"></i><span>Matéria na imprensa</span></span>`)
                 }
                 <span class="midia-materia-badge"><i class="fas fa-newspaper"></i> ${esc(item.veiculo || item.tag)}</span>
@@ -101,12 +113,18 @@ function renderizarMaterias() {
                 <p class="resumo-video-novo">${esc(item.resumo)}</p>
                 ${href ? `<a class="link-conteudo" href="${href}" target="_blank" rel="noopener noreferrer">Ler matéria →</a>` : ''}
             </div>
-        </div>`;
+        </article>`;
     }).join('');
 }
 
 // 2. Controle dos Modais (Abre, Fecha, ESC, clique fora e gestão de foco)
 let ultimoFoco = null;
+
+function definirFundoInerte(inerte) {
+    document.querySelectorAll('.topo-site, #conteudo-principal, #plantaoBtn').forEach(elemento => {
+        elemento.inert = inerte;
+    });
+}
 
 function prepararModais() {
     document.querySelectorAll('.modal').forEach(modal => {
@@ -130,22 +148,53 @@ function toggleModal(idModal) {
 function abrirModal(modal) {
     ultimoFoco = document.activeElement;
     modal.setAttribute('data-aberto', 'true');
+    modal.setAttribute('aria-hidden', 'false');
     modal.style.display = 'block';
+    if (ultimoFoco && ultimoFoco.getAttribute('aria-controls') === modal.id) {
+        ultimoFoco.setAttribute('aria-expanded', 'true');
+    }
+    definirFundoInerte(true);
     const primeiroCampo = modal.querySelector('input');
     if (primeiroCampo) primeiroCampo.focus();
 }
 
 function fecharModal(modal) {
     modal.removeAttribute('data-aberto');
+    modal.setAttribute('aria-hidden', 'true');
     modal.style.display = 'none';
+    definirFundoInerte(false);
+    if (ultimoFoco && ultimoFoco.getAttribute('aria-controls') === modal.id) {
+        ultimoFoco.setAttribute('aria-expanded', 'false');
+    }
     if (ultimoFoco && typeof ultimoFoco.focus === 'function') {
         ultimoFoco.focus();
     }
 }
 
 document.addEventListener('keydown', (evento) => {
+    const modal = document.querySelector('.modal[data-aberto="true"]');
+    if (!modal) return;
+
     if (evento.key === 'Escape') {
-        document.querySelectorAll('.modal[data-aberto="true"]').forEach(fecharModal);
+        fecharModal(modal);
+        return;
+    }
+
+    if (evento.key === 'Tab') {
+        const focaveis = [...modal.querySelectorAll(
+            'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )].filter(elemento => !elemento.closest('[hidden]'));
+        if (focaveis.length === 0) return;
+
+        const primeiro = focaveis[0];
+        const ultimo = focaveis[focaveis.length - 1];
+        if (evento.shiftKey && (document.activeElement === primeiro || !modal.contains(document.activeElement))) {
+            evento.preventDefault();
+            ultimo.focus();
+        } else if (!evento.shiftKey && (document.activeElement === ultimo || !modal.contains(document.activeElement))) {
+            evento.preventDefault();
+            primeiro.focus();
+        }
     }
 });
 

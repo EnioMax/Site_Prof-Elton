@@ -44,6 +44,18 @@ body {
     left: 0;
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 :focus-visible {
     outline: 2px solid var(--cor-secundaria);
     outline-offset: 2px;
@@ -351,6 +363,14 @@ body {
     font-size: 1rem;
 }
 
+.campo-label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--cor-primaria);
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
 .btn-concluir {
     width: 100%;
     background-color: var(--sucesso);
@@ -452,10 +472,14 @@ body {
     position: absolute;
     top: 15px;
     right: 20px;
+    padding: 0;
+    border: 0;
+    background: transparent;
     font-size: 1.8rem;
     cursor: pointer;
     color: #999;
     transition: color 0.2s;
+    line-height: 1;
 }
 
 .fechar:hover {

@@ -48,10 +48,10 @@
 </head>
 <body>
 
-    <a class="skip-link" href="#sobre">Pular para o conteúdo principal</a>
+    <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
 
     <!-- Botão Flutuante de Contato Rápido -->
-    <button type="button" class="plantao-imprensa" id="plantaoBtn" aria-haspopup="dialog" onclick="toggleModal('modalUrgente')">
+    <button type="button" class="plantao-imprensa" id="plantaoBtn" aria-haspopup="dialog" aria-controls="modalUrgente" aria-expanded="false" onclick="toggleModal('modalUrgente')">
         <span class="texto-plantao">Fale com o Prof. Elton</span>
     </button>
 
@@ -70,8 +70,11 @@
         </div>
     </header>
 
+    <main id="conteudo-principal" tabindex="-1">
     <!-- 2. HERO SECTION (Banner de Capa) -->
-    <section id="sobre" class="hero"></section>
+    <section id="sobre" class="hero">
+        <h1 class="sr-only">Prof. Dr. Elton Gomes — Ciência Política e Geopolítica</h1>
+    </section>
 
     <!-- 3. SEÇÃO PERFIL (Biografia) -->
     <section id="perfil" class="secao-biografia">
@@ -280,6 +283,7 @@
                 id="formAgenda"
                 onsubmit="enviarSolicitacao(event)">
 
+                <label class="campo-label" for="instituicao">Instituição, empresa ou veículo de comunicação</label>
                 <input
                     type="text"
                     id="instituicao"
@@ -287,6 +291,7 @@
                     placeholder="Instituição / Empresa / Veículo de Comunicação"
                     required>
 
+                <label class="campo-label" for="responsavel">Nome do responsável</label>
                 <input
                     type="text"
                     id="responsavel"
@@ -294,6 +299,7 @@
                     placeholder="Nome do responsável"
                     required>
 
+                <label class="campo-label" for="whatsapp">WhatsApp para contato</label>
                 <input
                     type="tel"
                     id="whatsapp"
@@ -301,6 +307,7 @@
                     placeholder="WhatsApp"
                     required>
 
+                <label class="campo-label" for="email">E-mail para contato</label>
                 <input
                     type="email"
                     id="email"
@@ -312,7 +319,7 @@
 
                     <div>
 
-                        <label>Data pretendida</label>
+                        <label class="campo-label" for="dataEvento">Data pretendida</label>
 
                         <input
                             type="date"
@@ -324,7 +331,7 @@
 
                     <div>
 
-                        <label>Horário pretendido</label>
+                        <label class="campo-label" for="horaEvento">Horário pretendido</label>
 
                         <input
                             type="time"
@@ -352,16 +359,20 @@
 
 </div>
     </section>
+    </main>
 
     <!-- 8. MODAL DE CONTATO -->
-    <div id="modalUrgente" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+    <div id="modalUrgente" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitulo">
         <div class="modal-conteudo">
-            <span class="fechar" onclick="toggleModal('modalUrgente')" role="button" aria-label="Fechar">&times;</span>
+            <button type="button" class="fechar" onclick="toggleModal('modalUrgente')" aria-label="Fechar">&times;</button>
             <h3 id="modalTitulo">Fale com o Prof. Elton</h3>
             <p>Preencha os dados abaixo e entraremos em contato o quanto antes.</p>
             <form id="formUrgente" onsubmit="enviarContatoUrgente(event)">
+                <label class="campo-label" for="urgNome">Seu nome</label>
                 <input type="text" id="urgNome" placeholder="Seu Nome" required class="campo-input">
+                <label class="campo-label" for="urgVeiculo">Empresa, instituição ou veículo</label>
                 <input type="text" id="urgVeiculo" placeholder="Empresa / Instituição / Veículo" required class="campo-input">
+                <label class="campo-label" for="urgWhats">WhatsApp para retorno</label>
                 <input type="tel" id="urgWhats" placeholder="WhatsApp para Retorno" required class="campo-input">
                 <button type="submit" class="btn-principal">Enviar Contato</button>
             </form>
